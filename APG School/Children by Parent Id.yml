@@ -1,0 +1,56 @@
+info:
+  name: Children by Parent Id
+  type: http
+  seq: 1
+
+http:
+  method: GET
+  url: "{{URL}}api/v1/children/childrenByParentId?parentId=900604689"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{TOKEN}}
+  params:
+    - name: parentId
+      value: "900604689"
+      type: query
+      description: |-
+        "DevSQLServer": "d10.diamondservers.net",
+          "DevSQLDatabase": "APGTEST.ERP",
+          "DevSQLUser": "sys",
+          "DevSQLPassword": "Mpearl@10837",
+  body:
+    type: json
+    data: "{\r
+
+      \    //\"RID\": \"3fcfb48961ff4286b041\",\r
+
+      \    \"VNO\": \"25-00101\",\r
+
+      \    \"Q\": \"3\",\r
+
+      \    \"STUCODE\": \"AT-BL2.4-57\",\r
+
+      \    \"PRICE\": \"0\",\r
+
+      \    \"TXCODE\": \"4300.236\",\r
+
+      \    \"TXPER\": \"10.0000000\",\r
+
+      \    \"DiscPer\": \"2.0000000000\",\r
+
+      \    \"BATCHIID\": \"\",\r
+
+      \    \"ITEMTAG\": \"\"\r
+
+      }"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

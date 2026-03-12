@@ -1,0 +1,29 @@
+info:
+  name: Common Pages
+  type: http
+  seq: 4
+
+http:
+  method: GET
+  url: "{{URL}}api/v1/school/info/pages?pageId=abt"
+  headers:
+    - name: Accept
+      value: application/json
+    - name: Content-Type
+      value: application/json
+    - name: Authorization
+      value: Bearer {{TOKEN}}
+  params:
+    - name: pageId
+      value: abt
+      type: query
+  body:
+    type: json
+    data: ""
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
