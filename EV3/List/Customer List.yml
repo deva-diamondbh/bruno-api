@@ -1,0 +1,42 @@
+info:
+  name: Customer List
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/qWEBAPI_CUST"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"ANAME\",    \r
+
+      \    \"Criteria\": [\r
+
+      {\r
+
+      \            \"op\": \"=\",\r
+
+      \            \"field\": \"ANAME\",\r
+
+      \            \"value\": \"ajees\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

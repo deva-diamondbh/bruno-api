@@ -1,0 +1,44 @@
+info:
+  name: INV List
+  type: http
+  seq: 10
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/inv"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 100,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"vno\",\r
+
+      \    \"Criteria\": [\r
+
+      \        {\r
+
+      \            \"op\": \"between\",\r
+
+      \            \"field\": \"mdate\",\r
+
+      \            \"value\": \"1-feb-2020\",\r
+
+      \            \"value2\": \"14-feb-2026\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

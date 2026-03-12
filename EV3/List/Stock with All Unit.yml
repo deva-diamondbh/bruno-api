@@ -1,0 +1,44 @@
+info:
+  name: Stock with All Unit
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/qAPI_STUNIT"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"scode\",    \r
+
+      \    \"Criteria\": [\r
+
+      \        {\r
+
+      \            \"op\": \"=\",\r
+
+      \            \"field\": \"scode\",\r
+
+      \            \"value\": \"984.56\"\r
+
+      \        }\r
+
+      \       \r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

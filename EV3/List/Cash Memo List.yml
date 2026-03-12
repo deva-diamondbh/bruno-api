@@ -1,0 +1,44 @@
+info:
+  name: Cash Memo List
+  type: http
+  seq: 11
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/qWEBAPI_CM"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 100,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"MDATE\",\r
+
+      \    \"Criteria\": [\r
+
+      \        {\r
+
+      \            \"op\": \"between\",\r
+
+      \            \"field\": \"mdate\",\r
+
+      \            \"value\": \"10-Jan-2026\",\r
+
+      \            \"value2\": \"14-feb-2026\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

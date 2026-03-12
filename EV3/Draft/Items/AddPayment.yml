@@ -1,0 +1,26 @@
+info:
+  name: AddPayment
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}/{{IToken}}/LsPayments"
+  body:
+    type: json
+    data: "{\"POS_PAYCODE\":\"1\",\"Amount\":\"100\"}\r
+
+      //{\"POS_PAYCODE\":\"2\",\"Amount\":\"100\",  \"CARDTYPE\":\"26402.2\", \"CARDNO\":\"345435\" }\r
+
+      //{\"POS_PAYCODE\":\"4\",\"Amount\":\"100\",  \"acode\":\"\" }\r
+
+      //{\"POS_PAYCODE\":\"6\",\"Amount\":\"100\",  \"CHNO\":\"erte\", \"CHBANK\":\"ert\", \"CHDATE\":\"10-Dec\" }\r\n"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

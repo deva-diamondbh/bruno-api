@@ -1,0 +1,20 @@
+info:
+  name: Delete Last Added Item
+  type: http
+  seq: 5
+
+http:
+  method: DELETE
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}/{{IToken}}/Items/{{LastItemRID}}"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

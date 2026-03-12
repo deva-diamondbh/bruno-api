@@ -1,0 +1,64 @@
+info:
+  name: All Filteration Sample
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/accs"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"aid\",    \r
+
+      \    \"Criteria\": [\r
+
+      \        {\r
+
+      \            \"op\": \"=\",\r
+
+      \            \"field\": \"subcode\",\r
+
+      \            \"value\": \"cust\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"op\": \"=>\",\r
+
+      \            \"field\": \"crlimit\",\r
+
+      \            \"value\": 500\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"op\": \"between\",\r
+
+      \            \"field\": \"mdate\",\r
+
+      \            \"value\": \"1-feb-2020\",\r
+
+      \            \"value2\": \"14-feb-2026\"\r
+
+      \        }\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

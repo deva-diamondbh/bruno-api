@@ -1,0 +1,47 @@
+info:
+  name: AddItem
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}/{{IToken}}/Items"
+  body:
+    type: json
+    data: '{ "STUCODE":"9990000000173","Q":3,"BATCH_IID":1016}'
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "try {\r
+
+        \    const jsonData = res.getBody();\r
+
+        \    \r
+
+        \    if (jsonData && jsonData.item.RID) {\r
+
+        \        bru.setVar(\"LastItemRID\", jsonData.item.RID);\r
+
+        \        console.log(\"LastItemRID successfully set to collection variable:\", jsonData.item.RID);\r
+
+        \    } else {\r
+
+        \        console.warn(\"LastItemRID property not found in the response\");\r
+
+        \    }\r
+
+        } catch (error) {\r
+
+        \    console.error(\"LastItemRID to parse response as JSON:\", error.message);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

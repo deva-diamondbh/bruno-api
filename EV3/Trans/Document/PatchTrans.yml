@@ -1,0 +1,20 @@
+info:
+  name: PatchTrans
+  type: http
+  seq: 2
+
+http:
+  method: PATCH
+  url: "{{BaseUrl}}api/ev3/trans/{{FormCode}}/{{vno}}"
+  body:
+    type: json
+    data: '{"rem":"dddd" }'
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

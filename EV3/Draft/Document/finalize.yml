@@ -1,0 +1,47 @@
+info:
+  name: finalize
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}/{{IToken}}/finalize"
+  body:
+    type: json
+    data: '{"createdby": "sys" }'
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "try {\r
+
+        \    const jsonData = res.getBody();\r
+
+        \    \r
+
+        \    if (jsonData && jsonData.RID) {\r
+
+        \        bru.setVar(\"LastItemRID\", jsonData.RID);\r
+
+        \        console.log(\"LastItemRID successfully set to collection variable:\", jsonData.RID);\r
+
+        \    } else {\r
+
+        \        console.warn(\"LastItemRID property not found in the response\");\r
+
+        \    }\r
+
+        } catch (error) {\r
+
+        \    console.error(\"LastItemRID to parse response as JSON:\", error.message);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

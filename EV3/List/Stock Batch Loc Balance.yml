@@ -1,0 +1,54 @@
+info:
+  name: Stock Batch Loc Balance
+  type: http
+  seq: 6
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/qAPI_BatchLocBal"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"scode\",    \r
+
+      \    \"Criteria\": [\r
+
+      \        {\r
+
+      \            \"op\": \"=\",\r
+
+      \            \"field\": \"scode\",\r
+
+      \            \"value\": \"1511.16\"\r
+
+      \        },\r
+
+      \        {\r
+
+      \            \"op\":\"=\",\r
+
+      \            \"field\":\"LCODE\",\r
+
+      \            \"value\":\"4.16\"\r
+
+      \        }\r
+
+      \       \r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

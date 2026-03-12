@@ -1,0 +1,32 @@
+info:
+  name: Stock with MainUnit
+  type: http
+  seq: 4
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/qAPI_STOCK_MAINUNIT"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"SNAME\",    \r
+
+      \    \"Criteria\": [\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

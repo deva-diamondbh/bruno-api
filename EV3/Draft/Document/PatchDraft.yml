@@ -1,0 +1,20 @@
+info:
+  name: PatchDraft
+  type: http
+  seq: 4
+
+http:
+  method: PATCH
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}/{{IToken}}"
+  body:
+    type: json
+    data: '{"LPO":"123h" }'
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

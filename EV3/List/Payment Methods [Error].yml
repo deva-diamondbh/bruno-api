@@ -1,0 +1,32 @@
+info:
+  name: Payment Methods [Error]
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/FixPosPay"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"SNO\",    \r
+
+      \    \"Criteria\": [\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

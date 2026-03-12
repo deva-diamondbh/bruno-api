@@ -1,0 +1,49 @@
+info:
+  name: NewDraft
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/draft/{{FormCode}}"
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+runtime:
+  scripts:
+    - type: after-response
+      code: "// Parse JSON response and extract _IToken to collection variable\r
+
+        try {\r
+
+        \    const jsonData = res.getBody();\r
+
+        \    \r
+
+        \    if (jsonData && jsonData._IToken) {\r
+
+        \        bru.setVar(\"IToken\", jsonData._IToken);\r
+
+        \        console.log(\"IToken successfully set to collection variable:\", jsonData._IToken);\r
+
+        \    } else {\r
+
+        \        console.warn(\"_IToken property not found in the response\");\r
+
+        \    }\r
+
+        } catch (error) {\r
+
+        \    console.error(\"Failed to parse response as JSON:\", error.message);\r
+
+        }"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

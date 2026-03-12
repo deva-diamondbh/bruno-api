@@ -1,0 +1,27 @@
+opencollection: 1.0.0
+
+info:
+  name: EV3
+
+request:
+  variables:
+    - name: key
+      value: ""
+    - name: BaseUrl
+      value: ""
+    - name: IToken
+      value: ""
+    - name: baseURL
+      value: ""
+    - name: LastItemRID
+      value: ""
+    - name: FormCode
+      value: ""
+    - name: vno
+      value: ""
+bundled: false
+extensions:
+  bruno:
+    ignore:
+      - node_modules
+      - .git

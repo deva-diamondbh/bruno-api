@@ -1,0 +1,32 @@
+info:
+  name: Payment Cards
+  type: http
+  seq: 9
+
+http:
+  method: POST
+  url: "{{BaseUrl}}api/ev3/List/CC"
+  body:
+    type: json
+    data: "{\r
+
+      \    \"PageSize\": 10,\r
+
+      \    \"PageNumber\": 1,\r
+
+      \    \"OrderBy\":\"CCNAME\",    \r
+
+      \    \"Criteria\": [\r
+
+      \    ]\r
+
+      }"
+  auth:
+    type: bearer
+    token: "{{key}}"
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
