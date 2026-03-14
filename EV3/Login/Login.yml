@@ -8,49 +8,29 @@ http:
   url: "{{baseURL}}/api/login/login"
   body:
     type: json
-    data: "{\r
-
-      \  \"dguid\": \"\",\r
-
-      \  \"DatabaseId\": \"debug.local\",\r
-
-      \  \"UserName\": \"sys\",\r
-
-      \  \"Password\": \"alpha123\",\r
-
-      \  \"ApiKey\": \"\",\r
-
-      \  \"ProductId\": \"Catalyst\",\r
-
-      \  \"ClientTypeGuid\": \"\",\r
-
-      \  \"DivisionId\": \"\",\r
-
-      \  \"ComputerName\": \"\",\r
-
-      \  \"url\": {\r
-
-      \    \"Url\": \"\",\r
-
-      \    \"BackofficeUrl\": \"\",\r
-
-      \    \"Data\": \"\",\r
-
-      \    \"BackofficeData\": \"\"\r
-
-      \  },\r
-
-      \  \"DevSQLServer\": \"trialserver.ddns.net,2548\",\r
-
-      \  \"DevSQLDatabase\": \"Catalyst805\",\r
-
-      \  \"DevSQLUser\": \"sa\",\r
-
-      \  \"DevSQLPassword\": \"Mpearl@711\",\r
-
-      \  \"DevStamp\": \"\"\r
-
-      }"
+    data: |-
+      {
+        "dguid": "",
+        "DatabaseId": "debug.local",
+        "UserName": "sys",
+        "Password": "alpha123",
+        "ApiKey": "",
+        "ProductId": "Catalyst",
+        "ClientTypeGuid": "",
+        "DivisionId": "",
+        "ComputerName": "",
+        "url": {
+          "Url": "",
+          "BackofficeUrl": "",
+          "Data": "",
+          "BackofficeData": ""
+        },
+        "DevSQLServer": "d10.diamondservers.net",
+        "DevSQLDatabase": "APGTEST1.ERP",
+        "DevSQLUser": "sys",
+        "DevSQLPassword": "Mpearl@10837",
+        "DevStamp": "",
+      }
   auth: inherit
 
 runtime:
