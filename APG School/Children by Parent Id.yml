@@ -49,6 +49,11 @@ http:
       }"
   auth: inherit
 
+runtime:
+  variables:
+    - name: URL
+      value: https://apraxic-nonoxidizable-slyvia.ngrok-free.dev/
+
 settings:
   encodeUrl: true
   timeout: 0

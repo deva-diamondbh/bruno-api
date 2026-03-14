@@ -2,6 +2,24 @@ opencollection: 1.0.0
 
 info:
   name: APG School
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
+
+request:
+  variables:
+    - name: URL
+      value: https://apraxic-nonoxidizable-slyvia.ngrok-free.dev/
+    - name: token
+      value: fbc7ade7-54a8-4a9e-a4c6-2de9343847f7
 bundled: false
 extensions:
   bruno:
