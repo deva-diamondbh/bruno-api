@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{URL}}api/v1/school/info/pages?pageId=abt"
+  url: "{{URL}}api/v1/studrv/getfeedet?studentid=191125628"
   headers:
     - name: Accept
       value: application/json
@@ -14,8 +14,8 @@ http:
     - name: Authorization
       value: Bearer {{TOKEN}}
   params:
-    - name: pageId
-      value: abt
+    - name: studentid
+      value: "191125628"
       type: query
   body:
     type: json
