@@ -2,6 +2,17 @@ opencollection: 1.0.0
 
 info:
   name: EV3
+config:
+  proxy:
+    inherit: true
+    config:
+      protocol: http
+      hostname: ""
+      port: ""
+      auth:
+        username: ""
+        password: ""
+      bypassProxy: ""
 
 request:
   variables:
@@ -12,7 +23,7 @@ request:
     - name: IToken
       value: ""
     - name: baseURL
-      value: ""
+      value: https://apraxic-nonoxidizable-slyvia.ngrok-free.dev/
     - name: LastItemRID
       value: ""
     - name: FormCode
