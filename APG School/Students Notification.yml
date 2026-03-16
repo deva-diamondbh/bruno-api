@@ -5,7 +5,7 @@ info:
 
 http:
   method: GET
-  url: "{{URL}}api/v1/children/notifications?studentCode=11002.10262"
+  url: "{{URL}}api/v1/children/notifications?studentCode=11002.10262&pageNumber=1"
   headers:
     - name: Accept
       value: application/json
@@ -16,6 +16,9 @@ http:
   params:
     - name: studentCode
       value: "11002.10262"
+      type: query
+    - name: pageNumber
+      value: "1"
       type: query
   body:
     type: json
